@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MyLevel
   m_EditorClassIdentifier: 
   _enabled: 1
-  _pathGenerator: {fileID: 11400000, guid: 3529cc9903db546449d530fea2dc69de, type: 2}
+  _pathGenerator: {fileID: 0}
   _sequenceCollection:
     sequences:
     - enabled: 1
@@ -23,7 +23,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 1952447862604562390, guid: ea8ebd8531f6fd34faa4b8eedb1a89fc, type: 3}
+        _prefab: {fileID: 1731387183834811925, guid: dd0112726f26eb84fa25843e7d67efeb, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 1307898477747815475, guid: 8c6d008bcfe12e44781a972353158915, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -44,7 +50,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 1952447862604562390, guid: ea8ebd8531f6fd34faa4b8eedb1a89fc, type: 3}
+        _prefab: {fileID: 1731387183834811925, guid: dd0112726f26eb84fa25843e7d67efeb, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 1307898477747815475, guid: 8c6d008bcfe12e44781a972353158915, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
