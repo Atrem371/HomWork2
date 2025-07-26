@@ -563,7 +563,7 @@ MonoBehaviour:
     min: {x: -13, y: -0.071041346, z: 0}
     size: {x: 13.033265, y: 9.858086, z: 13.000001}
   builders: []
-  unpacked: 1
+  unpacked: 0
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -571,7 +571,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 14
+  editorChildCount: 15
 --- !u!1 &5152844705754825465
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 6918925420243623972, guid: 322fb74ee274aa24dae1d5d82c074161, type: 3}
-  spawnPoints: []
 --- !u!1001 &970096751420495121
 PrefabInstance:
   m_ObjectHideFlags: 0
