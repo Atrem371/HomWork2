@@ -771,7 +771,7 @@ MonoBehaviour:
   _levelRandomizer: {fileID: 0}
   _generationRandomizer: {fileID: 0}
   _startLevel: 0
-  _sharedPathGenerator: {fileID: 11400000, guid: ca9d6af862b3c8c4f8f1c667e0fc3782, type: 2}
+  _sharedPathGenerator: {fileID: 11400000, guid: 52f7c407f5216974e80eef88fe9c9aa4, type: 2}
   levels: []
   usePathGeneratorInstance: 0
 --- !u!4 &1335812314
@@ -959,9 +959,10 @@ GameObject:
   - component: {fileID: 1889782995}
   - component: {fileID: 1889782994}
   - component: {fileID: 1889783000}
+  - component: {fileID: 1889783001}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,12 +1126,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889782993}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cebd765b17f48c54fa1fd9a5e4dc8f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _basicRunner: {fileID: 1889782995}
+--- !u!54 &1889783001
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889782993}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2126903375
 GameObject:
   m_ObjectHideFlags: 0

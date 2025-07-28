@@ -23,7 +23,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 1004368703649602181, guid: 480deb6280582814a9f94dac3da76b00, type: 3}
+        _prefab: {fileID: 8610724276949686045, guid: dcd765c084d6e85438bfa6ab441e891f, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 4669206400827537213, guid: a022d7d8441692f49a71f05fd98f0c8c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
@@ -44,7 +50,13 @@ MonoBehaviour:
       segments:
       - nested: 0
         randomPickChance: 1
-        _prefab: {fileID: 1004368703649602181, guid: 480deb6280582814a9f94dac3da76b00, type: 3}
+        _prefab: {fileID: 8610724276949686045, guid: dcd765c084d6e85438bfa6ab441e891f, type: 3}
+        _segmentPool: []
+        _pool: 0
+        _poolParent: {fileID: 0}
+      - nested: 0
+        randomPickChance: 1
+        _prefab: {fileID: 4669206400827537213, guid: a022d7d8441692f49a71f05fd98f0c8c, type: 3}
         _segmentPool: []
         _pool: 0
         _poolParent: {fileID: 0}
