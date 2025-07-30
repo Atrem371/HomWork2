@@ -2036,7 +2036,8 @@ MonoBehaviour:
     meshFilter: {fileID: 9132782419676666691}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
-    colliders: []
+    colliders:
+    - {fileID: 5329952711533859925}
     _isRoot: 0
   - transform: {fileID: 7954735091819729763}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2067,7 +2068,8 @@ MonoBehaviour:
     meshFilter: {fileID: 6470334553514892486}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
-    colliders: []
+    colliders:
+    - {fileID: 9139129438593475757}
     _isRoot: 0
   - transform: {fileID: 5320628699120331531}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2098,7 +2100,8 @@ MonoBehaviour:
     meshFilter: {fileID: 9113438508925576366}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
-    colliders: []
+    colliders:
+    - {fileID: 2444615112457692222}
     _isRoot: 0
   - transform: {fileID: 1480033072201172739}
     localRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2129,7 +2132,8 @@ MonoBehaviour:
     meshFilter: {fileID: 2532704872167278758}
     meshCollider: {fileID: 0}
     spriteRenderer: {fileID: 0}
-    colliders: []
+    colliders:
+    - {fileID: 5391044625937775935}
     _isRoot: 0
   bounds:
     center: {x: -0.08500099, y: 9.110359, z: -0.0013771057}
@@ -2266,16 +2270,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Work_Sign_2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5391044625937775935}
   m_SourcePrefab: {fileID: 100100000, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
 --- !u!4 &1480033072201172739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161183778827469743, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
   m_PrefabInstance: {fileID: 330865323766219948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2288376787292511673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+  m_PrefabInstance: {fileID: 330865323766219948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5391044625937775935
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288376787292511673}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7053943, y: 1.162228, z: 0.6772966}
+  m_Center: {x: 0, y: 0.581114, z: 0}
 --- !u!33 &2532704872167278758 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: 2860491563308026890, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
@@ -2675,8 +2712,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6053085787823158449, guid: abaf13a763c700b4c9759cfe2b3ede0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5329952711533859925}
   m_SourcePrefab: {fileID: 100100000, guid: abaf13a763c700b4c9759cfe2b3ede0a, type: 3}
+--- !u!1 &4781171341082349148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6053085787823158449, guid: abaf13a763c700b4c9759cfe2b3ede0a, type: 3}
+  m_PrefabInstance: {fileID: 1610814723234200301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5329952711533859925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781171341082349148}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9389098, y: 1.8065679, z: 1.2700292}
+  m_Center: {x: 0, y: 0.90328395, z: 0}
 --- !u!4 &5265256261427762406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6866636862930972171, guid: abaf13a763c700b4c9759cfe2b3ede0a, type: 3}
@@ -5534,11 +5600,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Work_Sign_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2444615112457692222}
   m_SourcePrefab: {fileID: 100100000, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+--- !u!1 &4800128224780661169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+  m_PrefabInstance: {fileID: 6470531243537983652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2444615112457692222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800128224780661169}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7053943, y: 1.162228, z: 0.6772966}
+  m_Center: {x: 0, y: 0.581114, z: 0}
 --- !u!4 &5320628699120331531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161183778827469743, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
@@ -6338,16 +6437,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Work_Sign_2
       objectReference: {fileID: 0}
+    - target: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9139129438593475757}
   m_SourcePrefab: {fileID: 100100000, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
 --- !u!33 &6470334553514892486 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: 2860491563308026890, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
   m_PrefabInstance: {fileID: 9113525418308849868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7291105451030055385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1969914521657366805, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
+  m_PrefabInstance: {fileID: 9113525418308849868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &9139129438593475757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7291105451030055385}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7053943, y: 1.162228, z: 0.6772966}
+  m_Center: {x: 0, y: 0.581114, z: 0}
 --- !u!4 &7954735091819729763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161183778827469743, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
