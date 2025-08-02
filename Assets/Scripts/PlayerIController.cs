@@ -1,5 +1,6 @@
 using UnityEngine;
 using Dreamteck.Forever;
+using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour {
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] private float moveAmount = 3f;
     [SerializeField] private float jumpForce = 2f;
-    [SerializeField] private float gravity = 5f;
+    [SerializeField] private float gravity = 3f;
 
     private const string RUN_BOOL = "IsRunning";
     private const string JUMP_TRIGGER = "IsJumping";
@@ -22,9 +23,8 @@ public class PlayerController : MonoBehaviour {
     private void Awake() {
         inputController = new InputController();
 
-        if (animator == null) {
+        if (animator == null)
             animator = GetComponent<Animator>();
-        }
 
         animator.SetBool(RUN_BOOL, true);
 
@@ -57,17 +57,26 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (runner != null) {
+        if (runner != null)
             runner.motion.offset = offset;
-        }
 
-        bool isRunning = Mathf.Abs(moveX) > 0.1f;
-        animator.SetBool(RUN_BOOL, isRunning);
+        animator.SetBool(RUN_BOOL, Mathf.Abs(moveX) > 0.1f);
     }
 
-    private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.CompareTag("Obstacle")) {
-            animator.SetTrigger(HIT_TRIGGER);
+    public void Hit() {
+        StartCoroutine(HitRoutine());
+    }
+
+    private IEnumerator HitRoutine() {
+        enabled = false;
+        animator.SetTrigger(HIT_TRIGGER);
+        yield return new WaitForSeconds(1f);
+        enabled = true;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Obstacle")) {
+            Hit();
         }
     }
 
@@ -77,6 +86,7 @@ public class PlayerController : MonoBehaviour {
         inputController.Dispose();
     }
 }
+
 
 
 
