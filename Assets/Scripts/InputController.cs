@@ -3,32 +3,35 @@ using UnityEngine.InputSystem;
 using System;
 
 public class InputController : IDisposable {
-    private readonly NewControls _inputActions;
+    private NewControls controls;
+
     public event Action<Vector2> MovementReceived;
     public event Action JumpPressed;
 
     public InputController() {
-        _inputActions = new NewControls();
-        _inputActions.Enable();
+        controls = new NewControls();
+        controls.Enable();
 
-        _inputActions.Default.Movement.performed += OnMovementPerformed;
-        _inputActions.Default.Movement.canceled += OnMovementPerformed;
-
-        _inputActions.Default.Jump.performed += ctx => JumpPressed?.Invoke();
+        controls.Default.Movement.performed += OnMove;
+        controls.Default.Movement.canceled += OnMove;
+        controls.Default.Jump.performed += OnJump;
     }
 
-    private void OnMovementPerformed(InputAction.CallbackContext context) {
-        Vector2 input = context.ReadValue<Vector2>();
-        MovementReceived?.Invoke(input);
+    private void OnMove(InputAction.CallbackContext ctx) {
+        MovementReceived?.Invoke(ctx.ReadValue<Vector2>());
+    }
+
+    private void OnJump(InputAction.CallbackContext ctx) {
+        JumpPressed?.Invoke();
     }
 
     public void Dispose() {
-        _inputActions.Default.Movement.performed -= OnMovementPerformed;
-        _inputActions.Default.Movement.canceled -= OnMovementPerformed;
-
-        _inputActions.Default.Jump.performed -= ctx => JumpPressed?.Invoke();
-
-        _inputActions.Dispose();
+        controls.Default.Movement.performed -= OnMove;
+        controls.Default.Movement.canceled -= OnMove;
+        controls.Default.Jump.performed -= OnJump;
+        controls.Disable();
+        controls.Dispose();
     }
 }
+
 
