@@ -74,18 +74,13 @@ public class PlayerController : MonoBehaviour {
         enabled = true;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Obstacle")) {
-            Hit();
-        }
-    }
-
     private void OnDestroy() {
         inputController.MovementReceived -= OnMove;
         inputController.JumpPressed -= OnJump;
         inputController.Dispose();
     }
 }
+
 
 
 
