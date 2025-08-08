@@ -2020,6 +2020,7 @@ GameObject:
   - component: {fileID: 2129761281}
   - component: {fileID: 2129761280}
   - component: {fileID: 2129761289}
+  - component: {fileID: 8268798062854259243}
   m_Layer: 0
   m_Name: Mobile_FreeSample_male_1_SimpleMovement
   m_TagString: Player
@@ -2402,6 +2403,19 @@ MonoBehaviour:
   m_animator: {fileID: 3367218073287715524}
   m_rigidBody: {fileID: 6070992208233775518}
   m_controlMode: 1
+--- !u!114 &8268798062854259243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772144238692940953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044658b10e5c88c468db28f1228ab476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3367218073287715524}
 --- !u!1 &8709149632063345728
 GameObject:
   m_ObjectHideFlags: 0
