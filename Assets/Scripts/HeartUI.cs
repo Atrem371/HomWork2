@@ -1,34 +1,51 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HeartUI : MonoBehaviour {
-    public Image[] hearts; 
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-    public int maxHearts = 3;
-    public int currentHearts;
+    public static HeartUI Instance { get; private set; }
 
-    void Start() {
+    [SerializeField] private GameObject[] redHearts;
+    [SerializeField] private int maxHearts = 3;
+    private int currentHearts;
+
+    public int MaxHearts => maxHearts;
+
+    private void Awake() {
+        if (Instance != null && Instance != this) {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+
+    private void Start() {
         currentHearts = maxHearts;
         UpdateHearts();
     }
 
-    public void TakeDamage(int amount) {
-        currentHearts -= amount;
+    public void SetHealth(int health) {
+        currentHearts = health;
+        if (currentHearts > maxHearts) currentHearts = maxHearts;
         if (currentHearts < 0) currentHearts = 0;
         UpdateHearts();
     }
 
-    public void Heal(int amount) {
-        currentHearts += amount;
-        if (currentHearts > maxHearts) currentHearts = maxHearts;
-        UpdateHearts();
+    
+    public void TakeDamage(int amount) {
+        SetHealth(currentHearts - amount);
     }
 
-    void UpdateHearts() {
-        for (int i = 0; i < hearts.Length; i++) {
-            hearts[i].sprite = (i < currentHearts) ? fullHeart : emptyHeart;
+    public void Heal(int amount) {
+        SetHealth(currentHearts + amount);
+    }
+
+    private void UpdateHearts() {
+        for (int i = 0; i < redHearts.Length; i++) {
+            redHearts[i].SetActive(i < currentHearts);
         }
     }
 }
+
+
+
+
 

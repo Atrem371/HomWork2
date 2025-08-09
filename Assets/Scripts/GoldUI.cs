@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 
 public class GoldUI : MonoBehaviour {
-    public TextMeshProUGUI goldText;
+    [SerializeField] private TextMeshProUGUI goldText;
     private int goldCount;
 
     public void AddGold(int amount) {
@@ -10,3 +10,4 @@ public class GoldUI : MonoBehaviour {
         goldText.text = goldCount.ToString();
     }
 }
+
