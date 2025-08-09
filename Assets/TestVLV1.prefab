@@ -2142,7 +2142,7 @@ MonoBehaviour:
     min: {x: -34.260002, y: -1.019, z: -15.002754}
     size: {x: 68.350006, y: 20.258717, z: 30.002754}
   builders: []
-  unpacked: 1
+  unpacked: 0
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 63
+  editorChildCount: 64
 --- !u!1001 &86952323872467350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2494,6 +2494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin_Up (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
+      propertyPath: m_TagString
+      value: "\u0421oin"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2503,7 +2507,7 @@ PrefabInstance:
       addedObject: {fileID: 7238380743479285298}
     - targetCorrespondingSourceObject: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3827921472913053053}
+      addedObject: {fileID: 5480072024329274217}
   m_SourcePrefab: {fileID: 100100000, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
 --- !u!33 &6443367929944511424 stripped
 MeshFilter:
@@ -2536,7 +2540,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.8588817, y: 3.8588817, z: 0.69860035}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3827921472913053053
+--- !u!114 &5480072024329274217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2929,6 +2933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin_Up
       objectReference: {fileID: 0}
+    - target: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
+      propertyPath: m_TagString
+      value: "\u0421oin"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2938,7 +2946,7 @@ PrefabInstance:
       addedObject: {fileID: 710941434733862000}
     - targetCorrespondingSourceObject: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1158381517675053950}
+      addedObject: {fileID: 2826693021611536600}
   m_SourcePrefab: {fileID: 100100000, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
 --- !u!33 &5620975286653196049 stripped
 MeshFilter:
@@ -2971,7 +2979,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.8588817, y: 3.8588817, z: 0.69860035}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1158381517675053950
+--- !u!114 &2826693021611536600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3548,6 +3556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin_Up (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
+      propertyPath: m_TagString
+      value: "\u0421oin"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3557,7 +3569,7 @@ PrefabInstance:
       addedObject: {fileID: 720230044314684692}
     - targetCorrespondingSourceObject: {fileID: 8059062218478941161, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1871750307064663293}
+      addedObject: {fileID: 2638317899071205635}
   m_SourcePrefab: {fileID: 100100000, guid: e0bfc7479007bc1479a9f7d769c5056e, type: 3}
 --- !u!1 &4732355645270127177 stripped
 GameObject:
@@ -3585,7 +3597,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.8588817, y: 3.8588817, z: 0.69860035}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1871750307064663293
+--- !u!114 &2638317899071205635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
