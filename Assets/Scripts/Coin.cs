@@ -3,16 +3,17 @@ using UnityEngine;
 public class Coin : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            PlayerGold playerGold = other.GetComponent<PlayerGold>();
-            if (playerGold != null) {
-                playerGold.AddGold(1);
+            if (PlayerGold.Instance != null) {
+                PlayerGold.Instance.AddGold(1);
             }
             else {
-                Debug.LogWarning("PlayerGoldNotFound");
+                Debug.LogWarning("PlayerGold Instance is null!");
             }
             Destroy(gameObject);
         }
     }
 }
+
+
 
 

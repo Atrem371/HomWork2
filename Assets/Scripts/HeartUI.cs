@@ -1,21 +1,11 @@
 using UnityEngine;
 
 public class HeartUI : MonoBehaviour {
-    public static HeartUI Instance { get; private set; }
-
     [SerializeField] private GameObject[] redHearts;
     [SerializeField] private int maxHearts = 3;
     private int currentHearts;
 
     public int MaxHearts => maxHearts;
-
-    private void Awake() {
-        if (Instance != null && Instance != this) {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
 
     private void Start() {
         currentHearts = maxHearts;
@@ -23,13 +13,10 @@ public class HeartUI : MonoBehaviour {
     }
 
     public void SetHealth(int health) {
-        currentHearts = health;
-        if (currentHearts > maxHearts) currentHearts = maxHearts;
-        if (currentHearts < 0) currentHearts = 0;
+        currentHearts = Mathf.Clamp(health, 0, maxHearts);
         UpdateHearts();
     }
 
-    
     public void TakeDamage(int amount) {
         SetHealth(currentHearts - amount);
     }
@@ -44,6 +31,8 @@ public class HeartUI : MonoBehaviour {
         }
     }
 }
+
+
 
 
 

@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class ObstacleHealt : MonoBehaviour {
+public class Obstacle : MonoBehaviour {
+    private const string PLAYER_TAG = "Player"; 
+
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag(PLAYER_TAG)) {
             if (HealthManager.Instance != null) {
                 HealthManager.Instance.TakeDamage(1);
             }
@@ -12,4 +14,5 @@ public class ObstacleHealt : MonoBehaviour {
         }
     }
 }
+
 

@@ -3,6 +3,8 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour {
     public static HealthManager Instance { get; private set; }
 
+    [SerializeField] private HeartUI heartUI; 
+
     private int currentHealth;
     private int maxHealth;
 
@@ -13,28 +15,31 @@ public class HealthManager : MonoBehaviour {
         }
         Instance = this;
 
+        if (heartUI == null) {
+            Debug.LogError("HeartUI reference is missing in HealthManager!");
+            return;
+        }
 
-        maxHealth = Object.FindAnyObjectByType<HeartUI>()?.MaxHearts ?? 3;
+        maxHealth = heartUI.MaxHearts;
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int amount) {
         currentHealth -= amount;
-        if (currentHealth < 0) currentHealth = 0;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        
-        HeartUI.Instance?.SetHealth(currentHealth);
-
-        Debug.Log("Player took damage: " + amount + ", current health: " + currentHealth);
+        heartUI.SetHealth(currentHealth);
+        Debug.Log($"Player took damage: {amount}, current health: {currentHealth}");
     }
 
     public void Heal(int amount) {
         currentHealth += amount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        HeartUI.Instance?.SetHealth(currentHealth);
-
-        Debug.Log("Player healed: " + amount + ", current health: " + currentHealth);
+        heartUI.SetHealth(currentHealth);
+        Debug.Log($"Player healed: {amount}, current health: {currentHealth}");
     }
 }
+
+
 
