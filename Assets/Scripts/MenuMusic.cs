@@ -1,16 +1,22 @@
 using UnityEngine;
 using JSAM;
+using System.Collections;
 
 public class MenuMusic : MonoBehaviour {
     void Start() {
-        Invoke(nameof(PlayMusicDelayed), 1f);
+        StartCoroutine(PlayMusicDelayed());
     }
 
-    void PlayMusicDelayed() {
+    private IEnumerator PlayMusicDelayed() {
+        
+        yield return null;
+
         
         AudioManager.PlayMusic(MusicAudioLibraryMusic.MenuMusic);
     }
 }
+
+
 
 
 
