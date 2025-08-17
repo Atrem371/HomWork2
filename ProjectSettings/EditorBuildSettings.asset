@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StarMenu.unity
     guid: 621d88c5a3571ab4ba6a7aa3705876c9
   - enabled: 1
-    path: Assets/1.unity
+    path: Assets/Scenes/1.unity
     guid: e85a38edd5c4fbf4c8a0ed37f16db03e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 5e3feff1762e2b447988802c7c482644, type: 3}

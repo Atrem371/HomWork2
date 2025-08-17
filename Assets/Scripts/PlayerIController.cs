@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour {
         inputController.JumpPressed -= OnJump;
         inputController.Dispose();
     }
+
+    
 }
 
 
