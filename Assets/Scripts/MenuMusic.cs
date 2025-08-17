@@ -3,18 +3,21 @@ using JSAM;
 using System.Collections;
 
 public class MenuMusic : MonoBehaviour {
-    void Start() {
-        StartCoroutine(PlayMusicDelayed());
+    void Awake() {
+        
+        StartCoroutine(PlayMusicWithDelay());
     }
 
-    private IEnumerator PlayMusicDelayed() {
+    private IEnumerator PlayMusicWithDelay() {
         
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
 
         
         AudioManager.PlayMusic(MusicAudioLibraryMusic.MenuMusic);
     }
 }
+
+
 
 
 
