@@ -6,14 +6,10 @@ public class DistanceTracker : MonoBehaviour {
 
     private void Start() {
         startPosition = transform.position;
-        Debug.Log($"Start position: {startPosition.z}");
     }
 
     private void Update() {
         distanceTravelled = transform.position.z - startPosition.z;
-
-        
-        Debug.Log($"Distance travelled: {distanceTravelled}");
     }
 }
 

@@ -1281,13 +1281,14 @@ GameObject:
   - component: {fileID: 937457157}
   - component: {fileID: 937457156}
   - component: {fileID: 937457155}
+  - component: {fileID: 937457159}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &937457154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1323,6 +1324,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 937457153}
   distanceText: {fileID: 1481937406}
   menuSceneName: StarMenu
+  fadeDuration: 0.5
 --- !u!114 &937457156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,6 +1363,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937457153}
   m_CullTransparentMesh: 1
+--- !u!225 &937457159
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937457153}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &978395044
 GameObject:
   m_ObjectHideFlags: 0

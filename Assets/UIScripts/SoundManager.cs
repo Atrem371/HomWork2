@@ -1,74 +1,69 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; 
+using UnityEngine.EventSystems;
 using JSAM;
 
 public class SoundManager : MonoBehaviour {
-    [Header("Слайдери")]
-    public Slider musicSlider;
-    public Slider effectsSlider;
+    [Header("Slider")]
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider effectsSlider;
 
-    [Header("Кнопки")]
-    public GameObject settingsPanel; 
-    public GameObject mainMenuButton; 
+    [Header("Buttons")]
+    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject mainMenuButton;
+
+    private const string MUSIC_VOLUME_KEY = "JSAM_MusicVolume";
 
     private void Start() {
         LoadVolumeSettings();
 
-        musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        effectsSlider.onValueChanged.AddListener(SetEffectsVolume);
+        if (musicSlider != null)
+            musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        if (effectsSlider != null)
+            effectsSlider.onValueChanged.AddListener(SetEffectsVolume);
     }
 
-    public void SetMusicVolume(float volume) {
+    private void SetMusicVolume(float volume) {
         AudioManager.MusicVolume = volume;
-        PlayerPrefs.SetFloat("JSAM_MusicVolume", volume);
+        PlayerPrefs.SetFloat(MUSIC_VOLUME_KEY, volume);
     }
 
-    public void SetEffectsVolume(float volume) {
+    private void SetEffectsVolume(float volume) {
         AudioManager.SoundVolume = volume;
-        PlayerPrefs.SetFloat("JSAM_EffectsVolume", volume);
     }
 
     private void LoadVolumeSettings() {
-        if (PlayerPrefs.HasKey("JSAM_MusicVolume")) {
-            float savedMusicVolume = PlayerPrefs.GetFloat("JSAM_MusicVolume");
-            musicSlider.value = savedMusicVolume;
+        if (PlayerPrefs.HasKey(MUSIC_VOLUME_KEY)) {
+            float savedMusicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY);
+            if (musicSlider != null)
+                musicSlider.value = savedMusicVolume;
             AudioManager.MusicVolume = savedMusicVolume;
         }
         else {
-            musicSlider.value = 0.5f;
+            if (musicSlider != null)
+                musicSlider.value = 0.5f;
         }
 
-        if (PlayerPrefs.HasKey("JSAM_EffectsVolume")) {
-            float savedEffectsVolume = PlayerPrefs.GetFloat("JSAM_EffectsVolume");
-            effectsSlider.value = savedEffectsVolume;
-            AudioManager.SoundVolume = savedEffectsVolume;
-        }
-        else {
+        if (effectsSlider != null)
             effectsSlider.value = 0.5f;
-        }
+        AudioManager.SoundVolume = 0.5f;
     }
 
-    
     public void OpenSettings() {
-        settingsPanel.SetActive(true);
+        if (settingsPanel != null)
+            settingsPanel.SetActive(true);
 
-        
-        if (musicSlider != null) {
+        if (musicSlider != null)
             EventSystem.current.SetSelectedGameObject(musicSlider.gameObject);
-        }
     }
 
-    
     public void CloseSettings() {
-        settingsPanel.SetActive(false);
+        if (settingsPanel != null)
+            settingsPanel.SetActive(false);
 
-        
-        if (mainMenuButton != null) {
+        if (mainMenuButton != null)
             EventSystem.current.SetSelectedGameObject(mainMenuButton);
-        }
 
-        
         PlayerPrefs.Save();
     }
 }
