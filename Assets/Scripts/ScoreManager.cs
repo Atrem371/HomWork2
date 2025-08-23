@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour {
 
     private void Awake() {
         if (Instance != null && Instance != this) {
-            Destroy(gameObject); 
+            Destroy(gameObject);
             return;
         }
         Instance = this;
@@ -16,12 +16,12 @@ public class ScoreManager : MonoBehaviour {
 
     public void AddGold(int amount) {
         gold += amount;
-        Debug.Log("Money,Money,Money,Must be funny,In the rich mans world : " + gold);
 
         if (goldUI != null) {
             goldUI.AddGold(amount);
         }
     }
 }
+
 
 

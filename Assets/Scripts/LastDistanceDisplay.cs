@@ -6,11 +6,9 @@ public class LastDistanceDisplay : MonoBehaviour {
 
     private void Start() {
         if (distanceText == null) {
-            Debug.LogError("DistanceText не прив’язаний у LastDistanceDisplay!");
             return;
         }
 
-        
         if (HighScoreManager.Instance != null) {
             float lastDistance = HighScoreManager.Instance.LastDistance;
             distanceText.text = $"Last Distance: {Mathf.FloorToInt(lastDistance)} m";
@@ -20,4 +18,5 @@ public class LastDistanceDisplay : MonoBehaviour {
         }
     }
 }
+
 
