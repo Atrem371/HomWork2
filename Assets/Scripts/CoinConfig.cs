@@ -2,6 +2,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "CoinConfig", menuName = "Configs/CoinConfig")]
 public class CoinConfig : ScriptableObject {
-    public int value = 1; 
+    [SerializeField] private int _value = 1;
+
+    public int Value => _value;
 }
+
 

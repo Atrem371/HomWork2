@@ -2,20 +2,24 @@ using UnityEngine;
 using JSAM;
 
 public class Coin : MonoBehaviour {
-    public CoinConfig config; 
+    [SerializeField] private CoinConfig _config;
+    public CoinConfig Config => _config;
+
+    private const string PlayerTag = "Player";
 
     private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
+        if (other.CompareTag(PlayerTag)) {
             AudioManager.PlaySound(MusicAudioLibrarySounds.Ñoin);
 
             if (PlayerGold.Instance != null) {
-                PlayerGold.Instance.AddGold(config.value); 
+                PlayerGold.Instance.AddGold(Config.Value);
             }
 
             Destroy(gameObject);
         }
     }
 }
+
 
 
 

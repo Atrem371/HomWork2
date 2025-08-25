@@ -11079,7 +11079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc507b46b4f45e44a8bcfd628484d6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: f200b2563994bf34fa3f96023ad79924, type: 2}
+  _config: {fileID: 11400000, guid: f200b2563994bf34fa3f96023ad79924, type: 2}
 --- !u!4 &879320092208275530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4748430262522521921, guid: 1396a2ea9f077044493cb2b01308fce0, type: 3}
