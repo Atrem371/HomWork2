@@ -1,58 +1,55 @@
 using UnityEngine;
 using MoreMountains.Feedbacks;
 using Cinemachine;
+using System.Collections;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
 public class Obstacle : MonoBehaviour {
     private const string PLAYER_TAG = "Player";
 
-    private MMF_Player blinkFeedback;
-    private CinemachineImpulseSource impulseSource;
-    private Renderer playerRenderer;
-    private Color originalColor;
+    private CinemachineImpulseSource _impulseSource;
+    private MMF_Player _blinkFeedback;
+    private Renderer _playerRenderer;
+    private HealthManager _healthManager;
+    private Color _originalColor;
 
-    private void Start() {
-        FindReferences();
-    }
+    private void Awake() {
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
 
-    private void FindReferences() {
-        impulseSource = GetComponent<CinemachineImpulseSource>()
-                        ?? GetComponentInChildren<CinemachineImpulseSource>();
+           
+        if (GameReferences.Instance != null) {
+            _blinkFeedback = GameReferences.Instance.BlinkFeedback;
+            _playerRenderer = GameReferences.Instance.PlayerRenderer;
+            _healthManager = GameReferences.Instance.HealthManager;
 
-        blinkFeedback = Object.FindFirstObjectByType<MMF_Player>();
-        if (blinkFeedback == null) {
-            foreach (var fb in Object.FindObjectsByType<MMF_Player>(FindObjectsSortMode.None)) {
-                if (fb.gameObject.name.ToLower().Contains("blink")) {
-                    blinkFeedback = fb;
-                    break;
-                }
-            }
-        }
-
-        var player = GameObject.FindGameObjectWithTag(PLAYER_TAG);
-        if (player != null) {
-            playerRenderer = player.GetComponentInChildren<Renderer>();
-            if (playerRenderer != null)
-                originalColor = playerRenderer.material.color;
+            if (_playerRenderer != null)
+                _originalColor = _playerRenderer.material.color;
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag(PLAYER_TAG)) return;
 
-        HealthManager.Instance?.TakeDamage(1);
-        impulseSource?.GenerateImpulse();
+        _healthManager?.TakeDamage(1);
+        _impulseSource.GenerateImpulse();
 
-        if (playerRenderer != null)
+        if (_playerRenderer != null)
             StartCoroutine(BlinkRed());
     }
 
-    private System.Collections.IEnumerator BlinkRed() {
-        playerRenderer.material.color = Color.red;
-        blinkFeedback?.PlayFeedbacks();
+    private IEnumerator BlinkRed() {
+        _playerRenderer.material.color = Color.red;
+        _blinkFeedback?.PlayFeedbacks();
+
         yield return new WaitForSeconds(0.2f);
-        playerRenderer.material.color = originalColor;
+
+        _playerRenderer.material.color = _originalColor;
     }
 }
+
+
+
+
 
 
 
