@@ -2373,6 +2373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkDuration: 0.2
 --- !u!33 &2532704872167278758 stripped
 MeshFilter:
   m_CorrespondingSourceObject: {fileID: 2860491563308026890, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
@@ -5744,6 +5745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkDuration: 0.2
 --- !u!4 &5320628699120331531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161183778827469743, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
@@ -6616,6 +6618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkDuration: 0.2
 --- !u!4 &7954735091819729763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1161183778827469743, guid: 068c53bb3cbf50444a3c727dabf5dbbc, type: 3}
