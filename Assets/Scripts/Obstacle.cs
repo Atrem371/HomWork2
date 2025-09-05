@@ -2,6 +2,7 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 using Cinemachine;
 using System.Collections;
+using VContainer;   
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class Obstacle : MonoBehaviour {
@@ -13,18 +14,18 @@ public class Obstacle : MonoBehaviour {
     private HealthManager _healthManager;
     private Color _originalColor;
 
+    [Inject]   
+    public void Construct(GameReferences gameReferences) {
+        _blinkFeedback = gameReferences.BlinkFeedback;
+        _playerRenderer = gameReferences.PlayerRenderer;
+        _healthManager = gameReferences.HealthManager;
+
+        if (_playerRenderer != null)
+            _originalColor = _playerRenderer.material.color;
+    }
+
     private void Awake() {
         _impulseSource = GetComponent<CinemachineImpulseSource>();
-
-           
-        if (GameReferences.Instance != null) {
-            _blinkFeedback = GameReferences.Instance.BlinkFeedback;
-            _playerRenderer = GameReferences.Instance.PlayerRenderer;
-            _healthManager = GameReferences.Instance.HealthManager;
-
-            if (_playerRenderer != null)
-                _originalColor = _playerRenderer.material.color;
-        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -46,6 +47,7 @@ public class Obstacle : MonoBehaviour {
         _playerRenderer.material.color = _originalColor;
     }
 }
+
 
 
 
