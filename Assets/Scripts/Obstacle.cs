@@ -1,52 +1,70 @@
 using UnityEngine;
-using MoreMountains.Feedbacks;
 using Cinemachine;
 using System.Collections;
-using VContainer;   
+using System.Collections.Generic;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class Obstacle : MonoBehaviour {
     private const string PLAYER_TAG = "Player";
-
     private CinemachineImpulseSource _impulseSource;
-    private MMF_Player _blinkFeedback;
-    private Renderer _playerRenderer;
-    private HealthManager _healthManager;
-    private Color _originalColor;
 
-    [Inject]   
-    public void Construct(GameReferences gameReferences) {
-        _blinkFeedback = gameReferences.BlinkFeedback;
-        _playerRenderer = gameReferences.PlayerRenderer;
-        _healthManager = gameReferences.HealthManager;
-
-        if (_playerRenderer != null)
-            _originalColor = _playerRenderer.material.color;
-    }
+    private List<Renderer> _playerRenderers = new List<Renderer>();
+    private List<Color> _originalColors = new List<Color>();
 
     private void Awake() {
         _impulseSource = GetComponent<CinemachineImpulseSource>();
+
+        
+        GameObject player = GameObject.FindGameObjectWithTag(PLAYER_TAG);
+        if (player != null) {
+            
+            _playerRenderers.AddRange(player.GetComponentsInChildren<Renderer>());
+
+            
+            foreach (var r in _playerRenderers) {
+                _originalColors.Add(r.material.color);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag(PLAYER_TAG)) return;
 
-        _healthManager?.TakeDamage(1);
+        
+        HealthManager.Instance?.TakeDamage(1);
+
+        
         _impulseSource.GenerateImpulse();
 
-        if (_playerRenderer != null)
-            StartCoroutine(BlinkRed());
+        
+        if (_playerRenderers.Count > 0)
+            StartCoroutine(BlinkRedCoroutine());
     }
 
-    private IEnumerator BlinkRed() {
-        _playerRenderer.material.color = Color.red;
-        _blinkFeedback?.PlayFeedbacks();
+    private IEnumerator BlinkRedCoroutine() {
+        
+        for (int i = 0; i < _playerRenderers.Count; i++) {
+            _playerRenderers[i].material.color = Color.red;
+        }
 
         yield return new WaitForSeconds(0.2f);
 
-        _playerRenderer.material.color = _originalColor;
+        
+        for (int i = 0; i < _playerRenderers.Count; i++) {
+            _playerRenderers[i].material.color = _originalColors[i];
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
