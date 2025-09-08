@@ -1037,13 +1037,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9081c8e7e30c2164d865fbfa48112a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentReference:
-    TypeName: 
-  autoRun: 1
-  autoInjectGameObjects: []
-  blinkFeedback: {fileID: 1396639138}
-  playerRenderer: {fileID: 2267769328427826413}
   healthManager: {fileID: 468884418}
+  playerRenderers:
+  - {fileID: 2267769328427826413}
+  impulseSource: {fileID: 348775475}
+  blinkFeedback: {fileID: 1396639138}
 --- !u!1 &722360390
 GameObject:
   m_ObjectHideFlags: 0

@@ -2142,7 +2142,7 @@ MonoBehaviour:
     min: {x: -34.260002, y: -1.019, z: -15.002754}
     size: {x: 68.350006, y: 20.258717, z: 30.002754}
   builders: []
-  unpacked: 1
+  unpacked: 0
   alwaysDraw: 0
   drawGeneratedSpline: 1
   drawGeneratedSamples: 1
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   drawEntranceAndExit: 1
   drawBounds: 1
   drawCustomPaths: 1
-  editorChildCount: 63
+  editorChildCount: 64
 --- !u!1001 &86952323872467350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2376,9 +2376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkFeedback: {fileID: 0}
-  PlayerRenderer: {fileID: 0}
-  HealthManager: {fileID: 0}
 --- !u!114 &6075785768605152836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5806,9 +5803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkFeedback: {fileID: 0}
-  PlayerRenderer: {fileID: 0}
-  HealthManager: {fileID: 0}
 --- !u!114 &8409531241915791663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6737,9 +6731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5063b22926724e8cb0e095d0f4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkFeedback: {fileID: 0}
-  PlayerRenderer: {fileID: 0}
-  HealthManager: {fileID: 0}
 --- !u!114 &6310093245372019898
 MonoBehaviour:
   m_ObjectHideFlags: 0
